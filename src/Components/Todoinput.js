@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { PlusIcon } from "@heroicons/react/outline";
 import {v4} from "uuid";
+import "./Todoinput.css";
 
 export default function Todoinput({ todos, setTodos }) {
   const [todo, setTodo] = useState("");
@@ -20,7 +21,7 @@ export default function Todoinput({ todos, setTodos }) {
   }
 
   return (
-    <div>
+    <div className="todo-input-wrapper">
       <input
         type="text"
         value={todo}
@@ -30,7 +31,7 @@ export default function Todoinput({ todos, setTodos }) {
       />
 
       <button onClick={handleClick}>
-        <PlusIcon />
+      <PlusIcon className="plus-icon" />
       </button>
     </div>
   );

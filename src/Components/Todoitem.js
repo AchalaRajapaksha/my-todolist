@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import "./Todoitem.css";
+import { PencilIcon, TrashIcon } from "@heroicons/react/outline";
+
 
 export default function Todoitem({todo, index, todos, setTodos}) {
   const [isEdit, setIsEdit] = useState(false);
@@ -56,9 +59,10 @@ export default function Todoitem({todo, index, todos, setTodos}) {
 
 
   return (
-    <div>
-      <div>{index}.
-      {isEdit ? (
+    <div className="todo-item-wrapper">
+      <div className="todo-item-text">
+        <div>{index}.</div>
+        {isEdit ? (
           <input
             type="text"
             value={editTodoName}
@@ -76,10 +80,16 @@ export default function Todoitem({todo, index, todos, setTodos}) {
           >
             {todo.name}
           </div>
-        )}</div>
-
-      <button onClick={handleDelete}>Delete</button>
-      <button onClick={handleEdit}>Edit</button>
+        )}
+      </div>
+      <div className="todo-item-buttons">
+        <button className="pencil-button" onClick={handleEdit}>
+          <PencilIcon />
+        </button>
+        <button className="trash-button" onClick={handleDelete}>
+          <TrashIcon />
+        </button>
+      </div>
     </div>
   );
 }
