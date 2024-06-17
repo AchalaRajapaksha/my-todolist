@@ -23,7 +23,7 @@ export default function Todoinput({ todos, setTodos }) {
   return (
     <div className="todo-input-wrapper">
       <input
-        type="text"
+        type="text" placeholder="Type your todo here..."
         value={todo}
         onChange={(event) => {
           setTodo(event.target.value);
