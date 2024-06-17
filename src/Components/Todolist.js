@@ -11,8 +11,8 @@ export default function Todolist() {
           <Todoinput todos={todos} setTodos={setTodos} />
           <div>
               
-              {todos.map((item) => {
-                  return <Todoitem key={item.id} todo={item} />
+              {todos.map((item,index) => {
+                  return <Todoitem key={item.id} todo={item} index={index+1} todos={todos} setTodos={setTodos} />
               
               })}
        

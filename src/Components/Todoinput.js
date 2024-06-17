@@ -1,21 +1,23 @@
 import React from "react";
 import { useState } from "react";
 import { PlusIcon } from "@heroicons/react/outline";
+import {v4} from "uuid";
 
 export default function Todoinput({ todos, setTodos }) {
   const [todo, setTodo] = useState("");
 
   const handleClick = () => {
-    const newTodo = {
-      id: 1,
+    if (todo.length>0){ const newTodo = {
+      id: v4(),
       name: todo,
       isCompleted: false,
     };
-
+    
     const newTodos = [...todos, newTodo];
     setTodos(newTodos);
     setTodo("");
   };
+  }
 
   return (
     <div>
